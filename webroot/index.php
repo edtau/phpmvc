@@ -9,17 +9,20 @@ $app->url->setUrlType(\Anax\Url\CUrl::URL_CLEAN);
 $app->theme->configure(ANAX_APP_PATH . 'config/theme_me.php');
 $app->navbar->configure(ANAX_APP_PATH . 'config/navbar_me.php');
 
-//Routers
-
-
+//function to add byline
+function byline($app){
+    $byline = $app->fileContent->get('byline.md');
+    $byline = $app->textFilter->doFilter($byline, 'shortcode, markdown');
+    return $byline;
+}
+//Route me (empty start page)
 $app->router->add('', function() use ($app) {
     $app->theme->setTitle("Me");
 
     $content = $app->fileContent->get('me.md');
     $content = $app->textFilter->doFilter($content, 'shortcode, markdown');
 
-    $byline = $app->fileContent->get('byline.md');
-    $byline = $app->textFilter->doFilter($byline, 'shortcode, markdown');
+    $byline = byline($app);
 
     $app->views->add('me/page', [
         'content' => $content,
@@ -27,15 +30,14 @@ $app->router->add('', function() use ($app) {
 
     ]);
 });
-
+//Router me
 $app->router->add('me', function() use ($app) {
     $app->theme->setTitle("Me");
 
     $content = $app->fileContent->get('me.md');
     $content = $app->textFilter->doFilter($content, 'shortcode, markdown');
 
-    $byline = $app->fileContent->get('byline.md');
-    $byline = $app->textFilter->doFilter($byline, 'shortcode, markdown');
+    $byline = byline($app);
 
     $app->views->add('me/page', [
         'content' => $content,
@@ -44,7 +46,7 @@ $app->router->add('me', function() use ($app) {
     ]);
 
 });
-
+//Route Redovisning
 $app->router->add('redovisning', function() use ($app) {
 
     $app->theme->setTitle("Redovisning");
@@ -52,8 +54,7 @@ $app->router->add('redovisning', function() use ($app) {
     $content = $app->fileContent->get('redovisning.md');
     $content = $app->textFilter->doFilter($content, 'shortcode, markdown');
 
-    $byline = $app->fileContent->get('byline.md');
-    $byline = $app->textFilter->doFilter($byline, 'shortcode, markdown');
+    $byline = byline($app);
 
     $app->views->add('me/page', [
         'content' => $content,
@@ -61,7 +62,7 @@ $app->router->add('redovisning', function() use ($app) {
     ]);
 
 });
-
+//Router Source
 $app->router->add('source', function() use ($app) {
 
     $app->theme->addStylesheet('css/source.css');
