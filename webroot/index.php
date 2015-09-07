@@ -7,7 +7,6 @@ $app->url->setUrlType(\Anax\Url\CUrl::URL_CLEAN);
 $app->theme->configure(ANAX_APP_PATH . 'config/theme_me.php');
 $app->navbar->configure(ANAX_APP_PATH . 'config/navbar_me.php');
 
-/* hello world */
 
 
 
