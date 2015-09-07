@@ -46,6 +46,8 @@ $app->router->add('me', function() use ($app) {
     ]);
 
 });
+
+
 //Route Redovisning
 $app->router->add('redovisning', function() use ($app) {
 

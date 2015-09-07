@@ -26,7 +26,7 @@ return [
             'template' => 'me/header',
             'data'     => [
                 'siteTitle' => "Min me-sida i PHPMVC",
-                'siteTagline' => "Här är en tagline som säger nåt vackert",
+                'siteTagline' => "Dorum Lipsum tagline ipsum dorum",
             ],
             'sort'     => -1
         ],

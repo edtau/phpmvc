@@ -17,6 +17,11 @@ return [
             'url'   => $this->di->get('url')->create('me'),
             'title' => ''
         ],
+        'dice'   => [
+            'text' => 'Tärning',
+            'url'  => $this->di->get('url')->create('dice.php'),
+            'title'   => ''
+        ],
         'report'   => [
             'text' => 'Redovisning',
             'url'  => $this->di->get('url')->create('redovisning'),
