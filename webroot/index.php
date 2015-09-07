@@ -14,7 +14,6 @@ $app->router->add('', function() use ($app) {
     $content = $app->fileContent->get('me.md');
     $content = $app->textFilter->doFilter($content, 'shortcode, markdown');
     //test comment
-
     $byline = $app->fileContent->get('byline.md');
     $byline = $app->textFilter->doFilter($byline, 'shortcode, markdown');
 
