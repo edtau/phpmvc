@@ -1,1 +1,1 @@
-Eddie Taube har författat denna artikel i kursen PHPMVC vid BTH.
+<p>Eddie Taube har författat denna artikel i kursen PHPMVC vid BTH.</p>
