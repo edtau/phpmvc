@@ -12,14 +12,11 @@ $app->navbar->configure(ANAX_APP_PATH . 'config/navbar_me.php');
 //Routers
 
 
-
 $app->router->add('', function() use ($app) {
     $app->theme->setTitle("Me");
 
     $content = $app->fileContent->get('me.md');
     $content = $app->textFilter->doFilter($content, 'shortcode, markdown');
-
-
 
     $byline = $app->fileContent->get('byline.md');
     $byline = $app->textFilter->doFilter($byline, 'shortcode, markdown');
