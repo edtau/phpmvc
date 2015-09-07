@@ -31,7 +31,6 @@ $app->router->add('', function() use ($app) {
     ]);
 });
 //Router me
-
 $app->router->add('me', function() use ($app) {
     $app->theme->setTitle("Me");
 
