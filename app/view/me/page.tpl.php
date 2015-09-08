@@ -14,8 +14,4 @@
 
         </article>
     </div>
-    <div class="six columns">
-
-    </div>
-
 </div>
