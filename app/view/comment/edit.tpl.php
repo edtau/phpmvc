@@ -1,4 +1,4 @@
-
+<h5>Uppdatera kommentar</h5>
     <form method=post>
         <input type=hidden name="redirect" value="<?=  $this->url->create("comment")?>">
         <div class="row">
