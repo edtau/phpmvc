@@ -1,8 +1,8 @@
 
 
 <div class="row">
-    <div class="six columns">
-        <article class="article1">
+
+
 
             <?=$content?>
 
@@ -12,6 +12,6 @@
                 </footer>
             <?php endif; ?>
 
-        </article>
-    </div>
+
+
 </div>
