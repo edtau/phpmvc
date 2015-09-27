@@ -17,6 +17,7 @@ return [
             'url'   => $this->di->get('url')->create('me'),
             'title' => ''
         ],
+
         // This is a menu item
         'dice'   => [
             'text' => 'Tärning',
@@ -24,17 +25,25 @@ return [
             'title'   => ''
         ],
         // This is a menu item
+        'comment'  => [
+            'text'  => 'Kommentarer',
+            'url'   => $this->di->get('url')->create('comment'),
+            'title' => ''
+        ],
+        // This is a menu item
         'report'   => [
             'text' => 'Redovisning',
             'url'  => $this->di->get('url')->create('redovisning'),
             'title'   => ''
         ],
+
         // This is a menu item
         'source' => [
             'text'  =>'Källkod',
             'url'   => $this->di->get('url')->create('source'),
             'title' => ''
         ],
+
     ],
 
     /**
