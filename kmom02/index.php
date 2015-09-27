@@ -7,7 +7,7 @@ $start = $time;
 require __DIR__.'/config_with_app.php';
 
 //To get clean url. Notice it must be before navbar to work as expected
-
+$app->url->setUrlType(\Anax\Url\CUrl::URL_CLEAN);
 
 // Create services and inject into the app.
 $di  = new \Anax\DI\CDIFactoryDefault();
@@ -18,8 +18,9 @@ $di->set('CommentController', function() use ($di) {
 
     return $controller;
 });
+
 $app = new \Anax\Kernel\CAnax($di);
-$app->url->setUrlType(\Anax\Url\CUrl::URL_CLEAN);
+
 
 
 $app->theme->configure(ANAX_APP_PATH . 'config/theme_me.php');
@@ -44,8 +45,6 @@ $app->router->add('comment', function() use ($app) {
         'action'     => 'view',
 
     ]);
-
-
     $app->views->add('comment/form', [
         'mail'      => null,
         'web'       => null,
