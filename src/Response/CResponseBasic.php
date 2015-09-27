@@ -95,7 +95,6 @@ class CResponseBasic
     public function redirect($url)
     {
         $this->checkIfHeadersAlreadySent();
-
         header('Location: ' . $url);
         exit();
     }

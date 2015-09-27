@@ -1,4 +1,6 @@
 <?php
+
+
 /**
  * Config file for pagecontrollers, creating an instance of $app.
  *

@@ -46,6 +46,9 @@ $app->router->add('me', function() use ($app) {
 
 });
 
+
+
+
 //Route Redovisning
 $app->router->add('redovisning', function() use ($app) {
 
@@ -113,6 +116,7 @@ $app->router->add('dice/roll', function() use ($app) {
     $app->theme->setTitle("Tärningen kastad");
 
 });
+
 
 $app->router->handle();
 $app->theme->render();

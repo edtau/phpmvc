@@ -1,9 +1,26 @@
 <?php
+$time = microtime();
+$time = explode(' ', $time);
+$time = $time[1] + $time[0];
+$start = $time;
 
 require __DIR__.'/config_with_app.php';
 
 //To get clean url. Notice it must be before navbar to work as expected
+
+
+// Create services and inject into the app.
+$di  = new \Anax\DI\CDIFactoryDefault();
+
+$di->set('CommentController', function() use ($di) {
+    $controller = new Phpmvc\Comment\CommentController();
+    $controller->setDI($di);
+
+    return $controller;
+});
+$app = new \Anax\Kernel\CAnax($di);
 $app->url->setUrlType(\Anax\Url\CUrl::URL_CLEAN);
+
 
 $app->theme->configure(ANAX_APP_PATH . 'config/theme_me.php');
 $app->navbar->configure(ANAX_APP_PATH . 'config/navbar_me.php');
@@ -14,6 +31,31 @@ function byline($app){
     $byline = $app->textFilter->doFilter($byline, 'shortcode, markdown');
     return $byline;
 }
+
+
+// comment route
+$app->router->add('comment', function() use ($app) {
+    $app->theme->addStylesheet('css/comment.css');
+    $app->theme->setTitle("Welcome to Anax Guestbook");
+    $app->views->add('comment/index');
+
+    $app->dispatcher->forward([
+        'controller' => 'comment',
+        'action'     => 'view',
+
+    ]);
+
+
+    $app->views->add('comment/form', [
+        'mail'      => null,
+        'web'       => null,
+        'name'      => null,
+        'content'   => null,
+        'output'    => null,
+    ]);
+
+});
+
 //Route me (empty start page)
 $app->router->add('', function() use ($app) {
     $app->theme->setTitle("Me");
@@ -114,5 +156,12 @@ $app->router->add('dice/roll', function() use ($app) {
 
 });
 
+
 $app->router->handle();
 $app->theme->render();
+$time = microtime();
+$time = explode(' ', $time);
+$time = $time[1] + $time[0];
+$finish = $time;
+$total_time = round(($finish - $start), 4);
+echo 'Page generated in '.$total_time.' seconds.';

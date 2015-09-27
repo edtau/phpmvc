@@ -1,0 +1,15 @@
+.comment{
+    border-bottom:2px solid black;
+    border-top:2px solid black;
+}
+.comment p{
+
+    color:#727272;
+}
+.comment h5{
+    color:#00796B;
+}
+.comment .post-id{
+    text-decoration:underline;
+    color:#0288D1;
+}

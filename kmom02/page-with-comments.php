@@ -7,7 +7,7 @@
 require __DIR__.'/config.php'; 
 
 
-// Create services and inject into the app. 
+// Create services and inject into the app.
 $di  = new \Anax\DI\CDIFactoryDefault();
 
 $di->set('CommentController', function() use ($di) {
@@ -24,7 +24,7 @@ $app = new \Anax\Kernel\CAnax($di);
 $app->router->add('', function() use ($app) {
 
     $app->theme->setTitle("Welcome to Anax Guestbook");
-    $app->views->add('comment/index');
+    $app->views->add('kommentera');
 
     $app->dispatcher->forward([
         'controller' => 'comment',
