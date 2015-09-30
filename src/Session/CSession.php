@@ -80,6 +80,7 @@ class CSession
      */
     public function set($key, $value)
     {
+
         $_SESSION[$key] = $value;
     }
 

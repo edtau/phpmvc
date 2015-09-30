@@ -39,21 +39,47 @@ $app->router->add('comment', function() use ($app) {
     $app->theme->addStylesheet('css/comment.css');
     $app->theme->setTitle("Welcome to Anax Guestbook");
     $app->views->add('comment/index');
-
-    $app->dispatcher->forward([
-        'controller' => 'comment',
-        'action'     => 'view',
-
-    ]);
     $app->views->add('comment/form', [
         'mail'      => null,
         'web'       => null,
         'name'      => null,
         'content'   => null,
         'output'    => null,
+        'key'    => "key1",
+    ]);
+    $app->dispatcher->forward([
+        'controller' => 'comment',
+        'action'     => 'view',
+        'params'     => ['key1'],
+
     ]);
 
+
 });
+// comment2 route
+$app->router->add('comment2', function() use ($app) {
+    $app->theme->addStylesheet('css/comment.css');
+    $app->theme->setTitle("Welcome to Anax Guestbook");
+    $app->views->add('comment/index');
+    $app->views->add('comment/form', [
+        'mail'      => null,
+        'web'       => null,
+        'name'      => null,
+        'content'   => null,
+        'output'    => null,
+        'key'    => "key2",
+    ]);
+    $app->dispatcher->forward([
+        'controller' => 'comment',
+        'action'     => 'view',
+        'params'     => ['key2'],
+
+
+    ]);
+
+
+});
+
 
 //Route me (empty start page)
 $app->router->add('', function() use ($app) {

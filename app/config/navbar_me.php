@@ -15,33 +15,39 @@ return [
         'home'  => [
             'text'  => 'Me',
             'url'   => $this->di->get('url')->create('me'),
-            'title' => ''
+            'title' => 'Me'
         ],
 
         // This is a menu item
         'dice'   => [
             'text' => 'Tärning',
             'url'  => $this->di->get('url')->create('dice'),
-            'title'   => ''
+            'title'   => 'Dice'
         ],
         // This is a menu item
         'comment'  => [
             'text'  => 'Kommentarer',
             'url'   => $this->di->get('url')->create('comment'),
-            'title' => ''
+            'title' => 'Kommentarer'
+        ],
+        // This is a menu item
+        'comment2'  => [
+            'text'  => 'Kommentarer 2',
+            'url'   => $this->di->get('url')->create('comment2'),
+            'title' => 'Kommentarer 2'
         ],
         // This is a menu item
         'report'   => [
             'text' => 'Redovisning',
             'url'  => $this->di->get('url')->create('redovisning'),
-            'title'   => ''
+            'title'   => 'Redovisning'
         ],
 
         // This is a menu item
         'source' => [
             'text'  =>'Källkod',
             'url'   => $this->di->get('url')->create('source'),
-            'title' => ''
+            'title' => 'Källkod'
         ],
 
     ],
