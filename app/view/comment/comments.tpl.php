@@ -5,8 +5,8 @@
                 <p><span class="post-id">Inlägg #<?=$id?></span> Postat av <?=$comment['name']?> <?=date("Y-m-d H:i", $comment['timestamp'])?></p>
                 <p><?=$comment['content']?></p>
                 <p>[E-post:<?=$comment['mail']?>] [  Websida:<?=$comment['web']?> ]</p>
-                <a class="button" href="<?= $this->url->create("comment/edit-view/$id/")?>">Editera inlägg</a>
+                <a class="button" href="<?= $this->url->create("comment/edit-view/$id/$key")?>">Editera inlägg</a>
+              
         </div>
         <?php endforeach; ?>
 <?php endif; ?>
-

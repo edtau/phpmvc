@@ -1,15 +1,17 @@
 <h5>Formulär för att lägga till kommentar</h5>
 <hr />
 <form method=post>
-    <input type=hidden name="redirect" value="<?=$this->url->create('comment')?>">
+    <input type=hidden name="redirect" value="<?=$key == 'key2' ? $this->url->create('comment2') : $this->url->create('comment')?>">
+
+    <input type=hidden name="key" value="<?=$key?>">
     <div class="row">
         <div class="four columns">
             <label for="name">Name:</label>
-            <input class="u-full-width" type="text" placeholder="Test Testsson" id="name" value='<?=$name?>'>
+            <input class="u-full-width" type="text" placeholder="Test Testsson" name="name" id="name" value='<?=$name?>'>
         </div>
         <div class="four columns">
             <label for="web">Homepage:</label>
-            <input class="u-full-width" type="text" placeholder="www.webpage.com" id="web" value='<?=$web?>'>
+            <input class="u-full-width" type="text" placeholder="www.webpage.com" name="web" id="web" value='<?=$web?>'>
         </div>
         <div class="four columns">
             <label for="mail">Mail:</label>
