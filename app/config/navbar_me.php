@@ -42,6 +42,12 @@ return [
             'url'  => $this->di->get('url')->create('redovisning'),
             'title'   => 'Redovisning'
         ],
+        // This is a menu item
+        'tema'   => [
+            'text' => 'Tema',
+            'url'  => $this->di->get('url')->create('theme.php'),
+            'title'   => 'Tema'
+        ],
 
         // This is a menu item
         'source' => [

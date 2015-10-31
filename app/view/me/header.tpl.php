@@ -7,6 +7,6 @@
             <h1><?=$siteTitle?></h1>
             <hr/>
             <h5><?=$siteTagline?></h5>
-        </div>
+         </div>
     </div>
 </div>

@@ -1,17 +1,8 @@
-
-
 <div class="row">
-
-
-
-            <?=$content?>
-
-            <?php if(isset($byline)) : ?>
-                <footer class="byline">
-                    <?=$byline?>
-                </footer>
-            <?php endif; ?>
-
-
-
+    <?=$content?>
+    <?php if(isset($byline)) : ?>
+        <footer class="byline">
+            <?=$byline?>
+        </footer>
+    <?php endif; ?>
 </div>
